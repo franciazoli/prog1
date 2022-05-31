@@ -13,7 +13,7 @@ int main(){
 try{
 	Simple_window win {Point{100,100},1030,480, "Canvas"};
 
-	Axis xa {Axis::x, Point{30,350}, 300,10, "X Axis"};
+	Axis xa {Axis::x, Point{30,350}, 300, 10, "X Axis"};
 	Axis ya {Axis::y, Point{30,350}, 300, 10, "Y Axis"};
 	
 	ya.set_color(Color::blue);

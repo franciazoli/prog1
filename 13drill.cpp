@@ -1,4 +1,4 @@
-//g++ WEEK2.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o week2 `fltk-config --ldflags --use-images`
+//g++ 13drill.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o 13drill `fltk-config --ldflags --use-images`
 #include "Simple_window.h"
 #include "Graph.h"
 #include "std_lib_facilities.h"
@@ -35,14 +35,20 @@ int main()
 			rect[i].set_fill_color(Color::red);
 			win.attach(rect[i]);
 		}
-		
-		
+		/*
+		Vector_ref<Image> img;
+		for(int i = 2; i < 5; i++)
+		{
+			img.push_back(new Image(Point{i*300, i*400}, "sealion.jpeg"));
+			win.attach(img[i]);
+		}
+		*/
+		win.attach(grid);
 		
 		Image lion1 (Point{600,200}, "sealion.jpeg");
 		Image lion2 (Point{0,200}, "sealion.jpeg");
 		Image lion3 (Point{400,600}, "sealion.jpeg");
 		
-		win.attach(grid);
 		win.attach(lion1);
 		win.attach(lion2);
 		win.attach(lion3);

@@ -3,7 +3,7 @@
     warning: this small multidimensional matrix library uses a few features
     not taught in ENGR112 and not explained in elementary textbooks
 
-    (c) Bjarne Stroustrup 
+    (c) Bjarne Stroustrup, Texas A&M University. 
 
     Use as you like as long as you acknowledge the source.
 */
@@ -802,3 +802,4 @@ template<class T, int D> Matrix<T,D> operator^(const Matrix<T,D>& m, const T& c)
 
 }
 #endif
+

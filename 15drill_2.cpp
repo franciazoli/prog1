@@ -15,13 +15,13 @@ struct  Person
 		Person(string fname, string lname, int a)
 		{
 			
-			if (a<=0 or a>=150)
-			{
-				error("Invalid Age");
-			}
 			if (fname=="" || lname=="")
 			{
 				error("Specify a name");
+			}
+			if (a<=0 or a>=150)
+			{
+				error("Invalid Age");
 			}
 			for(int i=0; i < invchar.size(); i++)
 			{

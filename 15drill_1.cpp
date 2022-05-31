@@ -1,4 +1,4 @@
-//g++ WEEK4_1.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o week4_1 `fltk-config --ldflags --use-images`
+//g++ 15drill_1.cpp Graph.cpp Window.cpp GUI.cpp Simple_window.cpp -o 15drill_1 `fltk-config --ldflags --use-images`
 
 
 #include "Simple_window.h"
@@ -8,8 +8,8 @@
 
 
 
-double one   (double x){return 1  ;}
-double slope (double x){return x/2;}
+double one(double x){return 1;}
+double slope(double x){return x/2;}
 double square(double x){return x*x;}
 double sloping_cos(double x){return cos(x)+slope(x);}
 
@@ -20,21 +20,22 @@ int main()
 	{
 
 		using namespace Graph_lib;
-		int constexpr xmax = 600;
-		int constexpr ymax = 600;
+		constexpr int xmax = 600;
+		constexpr int ymax = 600;
 		Simple_window win{ Point{100,100}, xmax, ymax, "Function Graphs"};
 
 		
 		constexpr int Ox = 300;
 		constexpr int Oy = 300;
 		Point Origo{Ox,Oy};
+		
 		constexpr int xlen = 400;
 		constexpr int ylen = 400;
 
 
-		Axis x {Axis::x,Point{100,Oy}, xlen, 20, "1==20 pixels"};
+		Axis x {Axis::x,Point{100,Ox}, xlen, 20, "1==20 pixels"};
 		x.set_color(Color::blue);
-		Axis y {Axis::y,Point{Ox,ylen+100}, ylen, 20, "1==20 pixels"};
+		Axis y {Axis::y,Point{Oy,ylen+100}, ylen, 20, "1==20 pixels"};
 		y.set_color(Color::blue);
 		win.attach(x);
 		win.attach(y);
@@ -55,6 +56,7 @@ int main()
 		cosine.set_color(Color::red);
 		Function sloping_cosine{sloping_cos,r_min, r_max, Origo, pts, xscale, yscale};
 		sloping_cosine.set_color(Color::yellow);
+
 		
 		
 		win.attach(constant);
@@ -63,6 +65,7 @@ int main()
 		win.attach(parabolic);
 		win.attach(cosine);
 		win.attach(sloping_cosine);
+
 
 
 		win.wait_for_button();
